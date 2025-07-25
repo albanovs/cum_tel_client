@@ -20,7 +20,7 @@ export default function CashReportScreen() {
 
     const fetchSessions = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/cash/sessions/all');
+            const res = await fetch('https://cum-tel-server.onrender.com/api/cash/sessions/all');
             const data = await res.json();
             setSessions(data);
         } catch (err) {
@@ -49,7 +49,7 @@ export default function CashReportScreen() {
         setLoadingPayments(true);
         setSelectedSession(session);
         try {
-            const res = await fetch(`http://localhost:5000/api/cash/sessions/${session._id}/payments`);
+            const res = await fetch(`https://cum-tel-server.onrender.com/api/cash/sessions/${session._id}/payments`);
             const data = await res.json();
             setPayments(data);
         } catch (err) {
