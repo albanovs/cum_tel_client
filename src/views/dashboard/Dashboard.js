@@ -15,8 +15,8 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const [sessionsRes, paymentsRes] = await Promise.all([
-        fetch('http://localhost:5000/api/cash/sessions/all'),
-        fetch('http://localhost:5000/api/cash/payments/all'),
+        fetch('https://cum-tel-server.onrender.com/api/cash/sessions/all'),
+        fetch('https://cum-tel-server.onrender.com/api/cash/payments/all'),
       ]);
       const sessionsData = await sessionsRes.json();
       const paymentsData = await paymentsRes.json();

@@ -68,7 +68,7 @@ export default function Modal({ data, onClose, onUpdated }) {
                 comment = `Просрочено на ${overdueDays} дн.`;
             }
 
-            const res = await fetch(`http://localhost:5000/api/installments/${data._id}/payment`, {
+            const res = await fetch(`https://cum-tel-server.onrender.com/api/installments/${data._id}/payment`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

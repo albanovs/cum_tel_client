@@ -38,7 +38,7 @@ export default function CashierScreen() {
 
     const openCashSession = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/cash/sessions', {
+            const res = await fetch('https://cum-tel-server.onrender.com/api/cash/sessions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ openedAt: new Date().toISOString() }),
@@ -60,7 +60,7 @@ export default function CashierScreen() {
 
     const closeCashSession = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/cash/sessions/${sessionId}/close`, {
+            const res = await fetch(`https://cum-tel-server.onrender.com/api/cash/sessions/${sessionId}/close`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ closedAt: new Date().toISOString() }),
@@ -81,7 +81,7 @@ export default function CashierScreen() {
 
     const fetchTodayPayments = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/cash/payments?date=${today}`);
+            const res = await fetch(`https://cum-tel-server.onrender.com/api/cash/payments?date=${today}`);
             if (!res.ok) throw new Error('Ошибка при загрузке данных');
             const data = await res.json();
             setTodayIncomes(data.filter((p) => p.type === 'income'));
@@ -104,7 +104,7 @@ export default function CashierScreen() {
         if (!amount) return alert('Введите сумму');
 
         try {
-            const res = await fetch('http://localhost:5000/api/cash/payments', {
+            const res = await fetch('https://cum-tel-server.onrender.com/api/cash/payments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

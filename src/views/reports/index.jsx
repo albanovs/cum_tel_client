@@ -14,7 +14,7 @@ export default function ReportsPage() {
     const [createModalOpen, setCreateModalOpen] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/installments')
+        axios.get('https://cum-tel-server.onrender.com/api/installments')
             .then(res => {
                 const data = Array.isArray(res.data) ? res.data : [];
                 setInstallments(data);

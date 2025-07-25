@@ -101,7 +101,7 @@ export default function CreateModal({ onClose, onCreated }) {
                 });
             }
 
-            const res = await axios.post('http://localhost:5000/api/installments', body);
+            const res = await axios.post('https://cum-tel-server.onrender.com/api/installments', body);
 
             onCreated(res.data);
         } catch (err) {
